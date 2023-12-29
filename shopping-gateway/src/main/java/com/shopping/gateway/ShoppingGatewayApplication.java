@@ -11,6 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * 配置nacos的注册中心地址
  */
 @EnableDiscoveryClient
+//排除数据源有关的配置
 @SpringBootApplication(exclude={DruidDataSourceAutoConfigure.class,DataSourceAutoConfiguration.class})
 public class ShoppingGatewayApplication {
 

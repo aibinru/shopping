@@ -3,7 +3,6 @@ package com.shopping.coupon.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-import ch.qos.logback.core.util.InvocationGate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -27,7 +26,7 @@ import com.shopping.common.utils.R;
  * @email abr@gmail.com
  * @date 2023-07-14 22:00:53
  */
-@RefreshScope//事实刷新配置
+@RefreshScope//实时刷新配置
 @RestController
 @RequestMapping("coupon/coupon")
 public class CouponController {
@@ -38,7 +37,7 @@ public class CouponController {
     private String name;
     @Value("${coupon.user.age}")
     private  Integer age;
-    @RequestMapping("test")
+    @RequestMapping("/test")
     public R test() {
         return R.ok().put("name",name).put("age",age);
     }
